@@ -1,0 +1,273 @@
+:root {
+  --teal: #49ffb9;
+  --orange: #ff9249;
+  --purple: #8349ff;
+}
+
+body,
+html {
+  top: 0;
+  margin: 0;
+  height: 100%;
+}
+
+#table {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  width: 500px;
+  height: fit-content;
+  background-color: var(--orange);
+  margin: auto;
+  position: relative;
+}
+
+#header i {
+  float: right;
+}
+
+#header h3 {
+  text-align: center;
+  margin: auto;
+}
+.options {
+  list-style: none;
+  display: inline-flex;
+  float: right;
+  margin: 0;
+}
+
+li {
+  margin: 0 10px;
+  list-style: none;
+}
+
+.expand {
+  height: fit-content;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+.taskOptions {
+  display: inline-flex;
+  float: right;
+  justify-content: center;
+  padding: 0;
+}
+
+.projectTitle {
+  padding-left: 10px;
+  display: grid;
+  align-items: center;
+  height: 32px;
+  width: 96%;
+}
+
+.active {
+  border-radius: 3px;
+
+  background-color: var(--purple);
+  -webkit-box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.75);
+}
+input,
+button {
+  margin: auto;
+}
+
+#addTask {
+  background-color: #008cba;
+  border: 1px solid white;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  margin: 10px auto;
+  width: 85px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+#taskInputContainer {
+  display: grid;
+}
+
+.projectTitle {
+  display: grid;
+  align-items: center;
+  height: 32px;
+  width: 96%;
+  margin: auto;
+}
+
+.options {
+  justify-content: center;
+}
+
+.task {
+  display: grid;
+  grid-template-columns: 0.25fr 1fr 1fr;
+  height: 30px;
+  align-items: center;
+}
+
+.project {
+  font-family: "Roboto", sans-serif;
+  display: grid;
+    grid-template-columns: repeat(2, .5fr);
+}
+.project:hover {
+  border-radius: 3px;
+
+  background-color: var(--purple);
+  -webkit-box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.75);
+}
+#tasksList {
+  padding: 0;
+}
+
+i {
+  cursor: pointer;
+}
+
+/* top: 13px;
+    right: 24px;
+    position: absolute;
+    background-color: var(--teal);
+    font-size: 20px;
+    border-radius: 100%;
+    width: 25px;
+    height: 32px; */
+
+#addProject {
+  width: 27px;
+  height: 27px;
+  border-radius: 100%;
+  position: absolute;
+  border: none;
+  bottom: -18px;
+  right: 20px;
+  -webkit-box-shadow: 3px 5px 9px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 3px 5px 9px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: 3px 5px 9px 1px rgba(0, 0, 0, 0.75);
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-content: center; */
+  background-color: white;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+#addProject:hover {
+  background-color: #2ee59d;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.projectDescription{
+  font-size: 12px;
+  margin: 0;
+}
+
+.projectOptions{
+  display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+}
+
+
+.project p{
+  transition-property: bottom;
+  transition: all 1.5s;
+  position: relative;
+  will-change: bottom;
+  color: transparent;
+  display: none;
+}
+
+.project:hover p{
+  top:0;
+  color: black;
+  display: block;
+}
+
+.project:hover .projectTitle{
+  grid-template-rows: repeat(2, .5fr);
+}
+
+.tasksListContainer{
+  grid-column: 1 / 3;
+  background-color: var(--teal);
+}
+
+/* Add Project Form  */
+
+#formContainer{
+  display: none;
+  background-color: turquoise;
+  width: 215px;
+  top: 50%;
+  left: 50%;
+  height: fit-content;
+  border: 2px solid black;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);
+border-radius: 5%;
+}
+
+#formContainer label{
+  display: block;
+  margin:10px 15px;
+}
+
+#formContainer h2{
+  text-align: center;
+}
+
+#content{
+  display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+
+.blurred{
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+
+#cancelButton{
+  text-align: center;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    border-radius: 100%;
+    font-weight: 700;
+    border: 2px solid black;
+    outline: none;
+    background-color: turquoise;
+    cursor: pointer;
+    color: black;
+}
+
