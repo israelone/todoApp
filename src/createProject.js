@@ -1,7 +1,7 @@
 import { addTask, updateProjectList } from "./methods.js";
 import { projects } from "./index.js";
 
-//This create a new Project, it includes its methods and its html code
+//Creates a new Project, including its methods and its html code
 class Project {
   constructor(name, description, date, priority, numberInList, tasks = []) {
     this.projectName = name;
@@ -176,7 +176,7 @@ class Project {
       }
     };
 
-    //When the trash button is pressed, this project is deleted
+    //Removes it self from table 
     this.removeSelf = () => {
       updateProjectList(this.projectNumber);
       this.projectContainer.remove();
@@ -197,7 +197,7 @@ class Project {
       }
     };
 
-    //Depending on the level of priority each project gets a different color
+    //Set a different color based on Priority Level
     this.setPriority = (currentPriority) => {
       if (currentPriority == "High") {
         this.projectContainer.style.backgroundColor = "#F75C03";
