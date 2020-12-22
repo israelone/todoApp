@@ -1,7 +1,7 @@
 import { addTask, updateProjectList } from "./methods.js";
 import { projects } from "./index.js";
 
-
+//This create a new Project, it includes its methods and its html code
 class Project {
   constructor(name, description, date, priority, numberInList, tasks = []) {
     this.projectName = name;
@@ -40,6 +40,7 @@ class Project {
       this.projectContainer.append(this.titleContainer);
     };
 
+    //Renders tasks belong to this project
     this.renderTasksList = function () {
       const selectPriorityOptions = ["High", "Medium", "Low"];
       const priorityLabel = document.createElement("label");
@@ -125,18 +126,7 @@ class Project {
       this.tasksListContainer.append(buttonsContainer);
     };
 
-    // this.addTaskForm = () =>{
-    //   const taskInputContainer = document.createElement("div");
-    //   const taskNameInput = document.createElement("input");
-    //   const taskStatusSpan = document.createElement("span");
-    //   taskStatusInputContainer.id = "taskStatusInput";
-    //   taskStatusSpan.innerText = "Complete?";
-    //   taskNameInput.placeholder = "TaskName";
-    //   taskInputContainer.style.display = "none";
-    //   taskStatusInputContainer.append(taskStatusSpan);
-    //   taskInputContainer.id = "taskInputContainer";
-    // }
-
+    //Creates the project options, Delete, Extend (see tasks) and Edit
     this.projectOptions = () => {
       const optionsList = document.createElement("ul");
       optionsList.className = "options";
@@ -172,6 +162,7 @@ class Project {
       }
     };
 
+    //Toggles Tasks Container from display:grid to display:none and viceversa
     this.displayTasks = (icon) => {
       icon.classList.toggle("rotate");
       if (
@@ -185,11 +176,13 @@ class Project {
       }
     };
 
+    //When the trash button is pressed, this project is deleted
     this.removeSelf = () => {
       updateProjectList(this.projectNumber);
       this.projectContainer.remove();
     };
 
+    
     this.editText = (icon) => {
       if (icon.className === "far fa-edit") {
         this.titleHeader.contentEditable = true;
@@ -204,6 +197,7 @@ class Project {
       }
     };
 
+    //Depending on the level of priority each project gets a different color
     this.setPriority = (currentPriority) => {
       if (currentPriority == "High") {
         this.projectContainer.style.backgroundColor = "#F75C03";
