@@ -1,7 +1,6 @@
 import { addTask, updateProjectList } from "./methods.js";
 import { projects } from "./index.js";
 
-//try to get specifics of the project such as name, number, and list of tasks primartily in the array
 
 class Project {
   constructor(name, description, date, priority, numberInList, tasks = []) {
